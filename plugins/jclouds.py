@@ -33,14 +33,14 @@ class Jclouds:
     def parse_comment(self, comment, data):
         """ Parse the comment object and populate any additional
             data that is going to be accessed when rendering the dashboard. """
-        updated = datetime.datetime.strptime(comment['created_at'],
+        created = datetime.datetime.strptime(comment['created_at'],
                                              '%Y-%m-%dT%H:%M:%SZ')
         if self._has(comment, ['\+1', 'lgtm']):
             data['likes'] = data['likes'] + 1
         if self._has(comment, ['SUCCESS']):
-            data['oks'].append(updated)
+            data['oks'].append(created)
         if self._has(comment, ['FAILURE']):
-            data['fails'].append(updated)
+            data['fails'].append(created)
 
     def classify(self, pull):
         """ Invoked once the pull request has been completely parsed.
