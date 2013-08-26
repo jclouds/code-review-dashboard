@@ -25,7 +25,7 @@ class Jclouds:
     def parse_pull(self, pull, data):
         """ Parse the pull request object and populate any additional
             data that is going to be accessed when rendering the dashboard. """
-        data['obsolete'] = data['old'] >= 2
+        data['obsolete'] = data['old'] >= 5
         data['likes'] = 0
         data['oks'] = []
         data['fails'] = []
@@ -71,7 +71,7 @@ class Jclouds:
     def _repos(self):
         return ["https://api.github.com/repos/jclouds/jclouds",
                 "https://api.github.com/repos/jclouds/jclouds-chef",
-               "https://api.github.com/repos/jclouds/jclouds-cli",
+                "https://api.github.com/repos/jclouds/jclouds-cli",
                 "https://api.github.com/repos/jclouds/jclouds-karaf",
                 "https://api.github.com/repos/jclouds/jclouds-labs",
                 "https://api.github.com/repos/jclouds/jclouds-labs-google",
