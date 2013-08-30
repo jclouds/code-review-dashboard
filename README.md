@@ -3,9 +3,9 @@ Code review dashboard
 
 A dashboard to see the status of all opened pull requests. It is configurable and extensible so you can customize the information that is shown for each pull request. The `basic` template provided as an example shows the pull requests classified in three columns:
 
-* **Cold** pull requests are the ones where no one has given a +1.
-* **Hot!** ones are those that are waiting for the last +1 to be merged.
-* **Burning** pull requests are those that are ready to be merged.
+* **Need More Work** pull requests are those that are failing the build or still have not been validated by the CI system.
+* **Jenkins Happy** pull requests are those that pass the build but still have not been +1'ed by anyone.
+* **Someone Likes!** pull requests are those that have some +1.
 
 It also shows in red the pull requests that have been without activity in the configured days, and shows in green the pull requests where the current user has participated.
 
@@ -32,7 +32,8 @@ it into a virtualenv should be the same, once it has been activated:
 Configuration
 -------------
 
-The dashboard is configured in the `config.py` file. Feel free to edit and adapt it to your needs.
+The dashboard internals are configured in the `config.py` file and the corresponding file in the `plugins` directory.
+Feel free to edit and adapt it to your needs.
 
 Running
 -------
