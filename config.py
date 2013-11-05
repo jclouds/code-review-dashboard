@@ -4,6 +4,7 @@
 
 LISTEN_ADDRESS = '0.0.0.0'      # Address where the application listens
 PLUGIN = 'jclouds'              # The plugin to load
+LISTEN_PORT = 80                # Port where the application listens
 DEBUG = True                    # Print debut information
 THREADED = True                 # Use multiple threads to perform the Github API calls
 MAX_RETRIES = 5                 # Number of retries for failed requests
