@@ -29,6 +29,7 @@ class Jclouds:
         data['likes'] = 0
         data['oks'] = []
         data['fails'] = []
+        data['unstable'] = []
 
     def parse_comment(self, comment, data):
         """ Parse the comment object and populate any additional
@@ -41,6 +42,8 @@ class Jclouds:
             data['oks'].append(created)
         if self._has(comment, ['FAILURE']):
             data['fails'].append(created)
+        if self._has(comment, ['UNSTABLE']):
+            data['unstable'].append(created)
 
     def classify(self, pull):
         """ Invoked once the pull request has been completely parsed.
@@ -48,8 +51,10 @@ class Jclouds:
         likes = pull['likes']
         oks = sorted(pull['oks'], reverse=True)
         fails = sorted(pull['fails'], reverse=True)
+        unstable = sorted(pull['unstable'], reverse=True)
         pull['total-oks'] = len(oks)
         pull['total-fails'] = len(fails)
+        pull['total-unstable'] = len(unstable)
 
         if likes > 0:
             return 'right'
