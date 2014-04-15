@@ -25,7 +25,7 @@ class Jclouds:
     def parse_pull(self, pull, data):
         """ Parse the pull request object and populate any additional
             data that is going to be accessed when rendering the dashboard. """
-        data['obsolete'] = data['old'] >= 5
+        data['obsolete'] = data['old'] >= 180
         data['likes'] = 0
         data['oks'] = []
         data['fails'] = []
