@@ -1,6 +1,8 @@
 Code review dashboard
 =====================
 
+[![Dashboard](http://i.imgur.com/Hk5XgzW.gif)](http://i.imgur.com/Hk5XgzW.gif)
+
 View it at: http://jclouds-pulls.herokuapp.com/
 
 A dashboard to see the status of all opened pull requests. It is configurable and extensible so you can customize the information that is shown for each pull request. The `basic` template provided as an example shows the pull requests classified in three columns:
