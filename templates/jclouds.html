@@ -8,5 +8,5 @@
     {% if pull['obsolete'] %}<span class="obsolete">{% endif %}
         {{ pull['old'] }} days old
     {% if pull['obsolete'] %}</span>{% endif %}<br/>
-{{ pull['total-oks'] }} success / {{ pull['total-fails'] }} failures / {{ pull['total-unstable'] }} unstable
+Build status: <span class="build-{{ pull['build_status'] }}">{{ pull['build_status'] }}</span>
 {%- endmacro %}

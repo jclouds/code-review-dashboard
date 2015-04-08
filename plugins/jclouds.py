@@ -58,6 +58,10 @@ class Jclouds:
 
         if likes > 0:
             return 'right'
+        elif pull['build_status'] == 'success':
+            return 'middle'
+        elif pull['build_status'] == 'failure':
+            return 'left'
         elif len(oks) == 0:
             return 'left'
         elif len(fails) == 0:
