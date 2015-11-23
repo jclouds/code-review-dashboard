@@ -25,14 +25,14 @@ If you prefer to run the dashboard as a Docker container, you just have to build
 run the container as follows:
 
     # Build the Docker image (only the first time)
-    docker build -t abiquo/code-review-dashboard .
+    docker build -t jclouds/code-review-dashboard .
 
     # Run the container
     docker run -d -p 80:8080 \
         -e CLIENT_ID=<client id> \
         -e CLIENT_SECRET=<client secret> \
         -e SECRET_KEY=<secret key> \
-        abiquo/code-review-dashboard
+        jclouds/code-review-dashboard
 
 Running without Docker
 ----------------------
